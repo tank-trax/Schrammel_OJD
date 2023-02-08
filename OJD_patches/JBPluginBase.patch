@@ -1,0 +1,29 @@
+diff --git a../Ext/JBPluginBase/jb_plugin_base/Utils/MessageOfTheDay.h b../Ext/JBPluginBase/jb_plugin_base/Utils/MessageOfTheDay.h
+index cf414d1..e9631fa 100644
+--- a../Ext/JBPluginBase/jb_plugin_base/Utils/MessageOfTheDay.h
++++ b../Ext/JBPluginBase/jb_plugin_base/Utils/MessageOfTheDay.h
+@@ -103,7 +103,7 @@ public:
+ 
+                 InfoAndUpdate messages;
+ 
+-                if (!update.isVoid())
++/*              if (!update.isVoid())
+                 {
+                     int64_t updateVersion = update.getProperty ("Version", currentPluginVersion);
+                     if (updateVersion > currentPluginVersion && update.hasProperty ("Text") && update.hasProperty ("Link"))
+@@ -116,7 +116,7 @@ public:
+                     if (generalMessageVersion > lastVersion && general.hasProperty ("Text"))
+                         messages.generalMessage = makeMessage (generalMessageVersion, general);
+                 }
+-
++*/
+                 promisedMsg.set_value (std::move (messages));
+                 return;
+             }
+@@ -141,4 +141,4 @@ private:
+                                           v.getProperty ("Link", juce::var()).toString());
+     }
+ };
+-}
+\ No newline at end of file
++}

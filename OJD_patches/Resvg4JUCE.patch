@@ -1,0 +1,13 @@
+diff --git a../Ext/Resvg4JUCE/CMakeLists.txt b../Ext/Resvg4JUCE/CMakeLists.txt
+index 6b02232..3bb4ae0 100644
+--- a../Ext/Resvg4JUCE/CMakeLists.txt
++++ b../Ext/Resvg4JUCE/CMakeLists.txt
+@@ -52,7 +52,7 @@ endif()
+ # Make an imported targe that references the library just built
+ add_library (resvg STATIC IMPORTED)
+ add_dependencies (resvg resvg_cargo_build)
+-set_target_properties (resvg PROPERTIES IMPORTED_LOCATION ${RESVG_LIB_OUTPUT})
++set_target_properties (resvg PROPERTIES IMPORTED_LOCATION ${RESVG_LIB_OUTPUT} POSITION_INDEPENDENT_CODE TRUE)
+ target_include_directories (resvg INTERFACE ${CMAKE_CURRENT_LIST_DIR}/Ext/resvg/c-api)
+ 
+ # Seems like bcrypt is a dependency on Windows
